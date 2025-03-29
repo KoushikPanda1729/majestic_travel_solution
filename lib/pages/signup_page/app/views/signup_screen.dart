@@ -20,97 +20,99 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SafeArea(
-        child: Column(
-          children: [
-            NavBar(
-              leadingIcon: FloatingButton(
-                onPressed: () {
-                  context.pop();
-                },
-                iconPath: AppIcons.angleSmallRight,
-                backgroundColor: AppColors.white,
-                iconColor: AppColors.black,
-                isDisabled: false,
-                buttonSize: 42,
-                iconSize: 20,
-                isRotated: true,
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              NavBar(
+                leadingIcon: FloatingButton(
+                  onPressed: () {
+                    context.pop();
+                  },
+                  iconPath: AppIcons.angleSmallRight,
+                  backgroundColor: AppColors.black,
+                  iconColor: AppColors.white,
+                  isDisabled: false,
+                  buttonSize: 42,
+                  iconSize: 20,
+                  isRotated: true,
+                ),
+                trailingIcon: const SizedBox(),
               ),
-              trailingIcon: const SizedBox(),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Create your account",
-                      style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "Mulish",
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Create your account",
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "Mulish",
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 40),
-                    AlphabeticTextfieldWidget(
-                      labelText: "Name*",
-                      onTextChanged: (value) {},
-                    ),
-                    const SizedBox(height: 16),
-                    EmailTextfieldWidget(
-                      onTextChanged: (value) {},
-                      labelText: "Email*",
-                    ),
-                    const SizedBox(height: 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        buildLabel("Date of Birth*"),
-                        const SizedBox(height: 12),
-                        AlphaNumericTextfieldWidget(
-                          onTextChanged: (value) {},
-                          labelText: "DD-MM-YYYY",
-                        ),
-                        const SizedBox(height: 20),
-                        buildLabel("Gender*"),
-                        const SizedBox(height: 12),
-                        ValueListenableBuilder<bool>(
-                          valueListenable: isMaleNotifier,
-                          builder: (context, isMale, child) {
-                            return Row(
-                              children: [
-                                buildGenderButton("Male", true, isMale),
-                                const SizedBox(width: 10),
-                                buildGenderButton("Female", false, isMale),
-                              ],
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    AlphabeticTextfieldWidget(
-                      onTextChanged: (value) {},
-                      labelText: "City*",
-                    ),
-                    const SizedBox(height: 16),
-                    AlphaNumericTextfieldWidget(
-                      onTextChanged: (value) {},
-                      labelText: "Referral Code (Optional)",
-                    ),
-                    const SizedBox(height: 40),
-                    SolidButtonWidget(
-                      label: "Click Here",
-                      onPressed: () {
-                        context.go("/");
-                      },
-                      isCircle: true,
-                    ),
-                  ],
+                      const SizedBox(height: 40),
+                      AlphabeticTextfieldWidget(
+                        labelText: "Name*",
+                        onTextChanged: (value) {},
+                      ),
+                      const SizedBox(height: 16),
+                      EmailTextfieldWidget(
+                        onTextChanged: (value) {},
+                        labelText: "Email*",
+                      ),
+                      const SizedBox(height: 20),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          buildLabel("Date of Birth*"),
+                          const SizedBox(height: 12),
+                          AlphaNumericTextfieldWidget(
+                            onTextChanged: (value) {},
+                            labelText: "DD-MM-YYYY",
+                          ),
+                          const SizedBox(height: 20),
+                          buildLabel("Gender*"),
+                          const SizedBox(height: 12),
+                          ValueListenableBuilder<bool>(
+                            valueListenable: isMaleNotifier,
+                            builder: (context, isMale, child) {
+                              return Row(
+                                children: [
+                                  buildGenderButton("Male", true, isMale),
+                                  const SizedBox(width: 10),
+                                  buildGenderButton("Female", false, isMale),
+                                ],
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      AlphabeticTextfieldWidget(
+                        onTextChanged: (value) {},
+                        labelText: "City*",
+                      ),
+                      const SizedBox(height: 16),
+                      AlphaNumericTextfieldWidget(
+                        onTextChanged: (value) {},
+                        labelText: "Referral Code (Optional)",
+                      ),
+                      const SizedBox(height: 40),
+                      SolidButtonWidget(
+                        label: "Click Here",
+                        onPressed: () {
+                          context.go("/");
+                        },
+                        backgroundColor: AppColors.black,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -123,7 +125,7 @@ class SignupScreen extends StatelessWidget {
         fontSize: 16,
         fontWeight: FontWeight.w400,
         fontFamily: "Mulish",
-        color: Colors.teal,
+        color: AppColors.black,
       ),
     );
   }
@@ -158,7 +160,7 @@ class SignupScreen extends StatelessWidget {
               width: 18,
               height: 18,
               colorFilter: const ColorFilter.mode(
-                Colors.teal,
+                AppColors.black,
                 BlendMode.srcIn,
               ),
             ),
@@ -166,7 +168,7 @@ class SignupScreen extends StatelessWidget {
             Text(
               text,
               style: const TextStyle(
-                color: Colors.teal,
+                color: AppColors.black,
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
               ),

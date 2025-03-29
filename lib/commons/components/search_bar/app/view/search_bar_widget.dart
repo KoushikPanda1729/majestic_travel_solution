@@ -9,7 +9,7 @@ class SearchBarWidget extends StatelessWidget {
 
   const SearchBarWidget({
     super.key,
-    this.hintText = 'Search Test',
+    this.hintText = 'Search your destination',
     required this.onChanged,
   });
 
@@ -22,9 +22,9 @@ class SearchBarWidget extends StatelessWidget {
         boxShadow: const [
           BoxShadow(
             color: Colors.black12,
-            blurRadius: 4,
+            blurRadius: 1,
             spreadRadius: 1,
-            offset: Offset(0, 2),
+            offset: Offset(0, 1),
           ),
         ],
       ),
@@ -36,26 +36,38 @@ class SearchBarWidget extends StatelessWidget {
           onChanged: onChanged, // Calls the function when text changes
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: const TextStyle(
-              color: Colors.teal,
+            hintStyle: TextStyle(
+              color: Colors.grey.withOpacity(0.9),
               fontSize: 12,
               fontWeight: FontWeight.w600,
               fontFamily: "Mulish",
             ),
             border: InputBorder.none,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset(
+                AppIcons.search, // Change to the desired prefix icon
+                colorFilter: const ColorFilter.mode(
+                  AppColors.black,
+                  BlendMode.srcIn,
+                ),
+                width: 16,
+                height: 16,
+              ),
+            ),
             suffixIcon: SizedBox(
-              width: 16,
-              height: 16,
+              width: 10,
+              height: 10,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(15.0),
                 child: SvgPicture.asset(
-                  AppIcons.search,
+                  AppIcons.filter, // Keep or change as needed
                   colorFilter: const ColorFilter.mode(
-                    AppColors.teal,
+                    AppColors.black,
                     BlendMode.srcIn,
                   ),
-                  width: 16,
-                  height: 16,
+                  width: 10,
+                  height: 10,
                 ),
               ),
             ),

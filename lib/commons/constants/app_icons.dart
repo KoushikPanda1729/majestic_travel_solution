@@ -1,6 +1,7 @@
 class AppIcons {
   static const String add = 'assets/icons/add.svg';
   static const String angleRight = 'assets/icons/angle_right.svg';
+  static const String arrowRight = 'assets/icons/arrow_right.svg';
   static const String angleSmallDown = 'assets/icons/angle_small_down.svg';
   static const String angleSmallRight = 'assets/icons/angle_small_right.svg';
   static const String bank = 'assets/icons/bank.svg';
@@ -26,6 +27,7 @@ class AppIcons {
   static const String plusSmall = 'assets/icons/plus_small.svg';
   static const String search = 'assets/icons/search.svg';
   static const String heart3 = 'assets/icons/heart_3.svg';
+  static const String heartFill = 'assets/icons/heart_fill.svg';
   static const String shoppingCart = 'assets/icons/shopping_cart.svg';
   static const String trackButton = 'assets/icons/track_button.svg';
   static const String userButton = 'assets/icons/user_button.svg';
@@ -39,4 +41,15 @@ class AppIcons {
   static const String camera = 'assets/icons/camera.svg';
   static const String call = 'assets/icons/call.svg';
   static const String chat = 'assets/icons/chat.svg';
+  static const String onboarding1 = 'assets/icons/onboarding1.svg';
+  static const String onboarding2 = 'assets/icons/onboarding_2.svg';
+  static const String onboarding3 = 'assets/icons/onboarding_3.svg';
+  static const String location = 'assets/icons/location.svg';
+  static const String restaurants = 'assets/icons/restaurants.svg';
+  static const String cafe = 'assets/icons/cafe.svg';
+  static const String fair = 'assets/icons/fair.svg';
+  static const String plate = 'assets/icons/plate.svg';
+  static const String brain = 'assets/icons/brain.svg';
+  static const String intro = 'assets/icons/intro.svg';
+  static const String train = 'assets/icons/train.svg';
 }

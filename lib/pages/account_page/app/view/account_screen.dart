@@ -77,6 +77,7 @@ class AccountScreen extends StatelessWidget {
                         context.push("/add_family_member_and_edit_profile",
                             extra: true);
                       },
+                      isEditingIcon: true,
                     ),
                   ],
                 ),

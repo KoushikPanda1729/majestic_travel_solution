@@ -26,18 +26,10 @@ class OnboardingScreen extends ConsumerWidget {
 
           return Stack(
             children: [
-              PageView.builder(
+              PageView(
                 controller: onboardingState.pageController,
-                itemCount: onboardingState.onboardingImages.length,
                 onPageChanged: (index) => onboardingViewModel.updatePage(index),
-                itemBuilder: (context, index) {
-                  return Image.asset(
-                    onboardingState.onboardingImages[index],
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  );
-                },
+                children: onboardingState.onboardingPages,
               ),
               Positioned(
                 bottom: bottomMargin,
@@ -50,8 +42,8 @@ class OnboardingScreen extends ConsumerWidget {
                       onPressed: onboardingViewModel.previousPage,
                       iconPath: AppIcons.angleSmallRight,
                       backgroundColor: onboardingState.currentPage == 0
-                          ? AppColors.lightTeal
-                          : AppColors.teal,
+                          ? Colors.grey
+                          : AppColors.black,
                       iconColor: AppColors.white,
                       isRotated: true,
                       isDisabled: onboardingState.currentPage == 0,
@@ -60,12 +52,13 @@ class OnboardingScreen extends ConsumerWidget {
                     ),
                     SmoothPageIndicator(
                       controller: onboardingState.pageController,
-                      count: onboardingState.onboardingImages.length,
+                      count: onboardingState.onboardingPages.length,
                       effect: ExpandingDotsEffect(
                         dotHeight: indicatorSize,
                         dotWidth: indicatorSize,
-                        activeDotColor: AppColors.teal,
-                        dotColor: AppColors.unselect,
+                        activeDotColor: AppColors.black,
+                        dotColor: Colors.grey,
+                        spacing: indicatorSize,
                       ),
                     ),
                     FloatingButton(
@@ -77,7 +70,7 @@ class OnboardingScreen extends ConsumerWidget {
                         }
                       },
                       iconPath: AppIcons.angleSmallRight,
-                      backgroundColor: AppColors.teal,
+                      backgroundColor: AppColors.black,
                       iconColor: AppColors.white,
                       isDisabled: false,
                       buttonSize: buttonSize,

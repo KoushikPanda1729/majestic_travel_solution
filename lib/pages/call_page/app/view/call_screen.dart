@@ -67,7 +67,6 @@ class CallScreen extends StatelessWidget {
                 ProfileAvatar(
                   imagePath: AppImages.profilePicture,
                   onTap: () {},
-                  isEditingIcon: false,
                   size: 80,
                 ),
                 const SizedBox(height: 12),

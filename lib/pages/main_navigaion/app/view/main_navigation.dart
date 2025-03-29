@@ -5,8 +5,7 @@ import 'package:majestic_travel_solution/pages/account_page/app/view/account_scr
 import 'package:majestic_travel_solution/pages/call_page/app/view/call_screen.dart';
 import 'package:majestic_travel_solution/pages/home_page/app/view/home_screen.dart';
 import 'package:majestic_travel_solution/pages/main_navigaion/app/provider/main_navigation_provider.dart';
-import 'package:majestic_travel_solution/pages/need_help_page/app/view/need_help_screen.dart';
-import 'package:majestic_travel_solution/pages/track_page/app/view/track_order_widget.dart';
+import 'package:majestic_travel_solution/pages/saved_page/app/view/saved_restaurants.dart';
 
 class MainNavigationScreen extends ConsumerWidget {
   const MainNavigationScreen({super.key});
@@ -38,9 +37,8 @@ class MainNavigationScreen extends ConsumerWidget {
                 },
                 children: const [
                   HomeScreen(),
-                  NeedHelpScreen(),
+                  SavedRestaurants(),
                   CallScreen(),
-                  TrackOrderWidget(),
                   AccountScreen(),
                 ],
               ),

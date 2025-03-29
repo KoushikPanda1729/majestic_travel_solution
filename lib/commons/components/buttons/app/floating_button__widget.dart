@@ -9,6 +9,7 @@ class FloatingButton extends StatelessWidget {
   final Color backgroundColor;
   final Color iconColor;
   final bool isRotated;
+  final bool boxShadow;
   final bool isDisabled;
   final bool isActive;
   final double buttonSize;
@@ -25,6 +26,7 @@ class FloatingButton extends StatelessWidget {
     this.isActive = false,
     required this.buttonSize,
     required this.iconSize,
+    this.boxShadow = true,
   });
 
   @override
@@ -37,14 +39,16 @@ class FloatingButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDisabled ? Colors.grey : backgroundColor,
           shape: BoxShape.circle,
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 1,
-              spreadRadius: 1,
-              offset: Offset(0, 1),
-            ),
-          ],
+          boxShadow: boxShadow
+              ? const [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 1,
+                    spreadRadius: 1,
+                    offset: Offset(0, 1),
+                  ),
+                ]
+              : null,
         ),
         child: Center(
           child: Transform.rotate(

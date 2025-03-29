@@ -15,14 +15,36 @@ class SplashScreen extends ConsumerWidget {
     });
 
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            AppImages.splashScreen,
-            fit: BoxFit.cover,
-          ),
-        ],
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ClipOval(
+              child: Image.asset(
+                AppImages.logo,
+                width: 120,
+                height: 120,
+              ),
+            ),
+            const SizedBox(height: 20),
+            RichText(
+              text: const TextSpan(
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                children: [
+                  TextSpan(
+                    text: 'Majestic Travel ',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  TextSpan(
+                    text: 'Solution',
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

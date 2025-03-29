@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:majestic_travel_solution/commons/components/add_member_and_edit_profile/app/view/add_member_and_edit_profile.dart';
 import 'package:majestic_travel_solution/pages/account_page/app/view/account_screen.dart';
+import 'package:majestic_travel_solution/pages/all_restaurants_page/app/view/all_restaurants_page.dart';
+import 'package:majestic_travel_solution/pages/all_restaurants_page/app/view/restaurants_details_page.dart';
 import 'package:majestic_travel_solution/pages/book_test_page/app/views/book_radiology.dart';
 import 'package:majestic_travel_solution/pages/book_test_page/app/views/book_test.dart';
 import 'package:majestic_travel_solution/pages/booking_details_page/app/view/booking_details_screen.dart';
@@ -8,12 +10,11 @@ import 'package:majestic_travel_solution/pages/call_page/app/view/call_screen.da
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/checkout_page.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/payments_success_screen.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/add_update_address.dart';
+import 'package:majestic_travel_solution/pages/destination_details/app/view/destination_details.dart';
 import 'package:majestic_travel_solution/pages/login_page/app/views/login_screen.dart';
 import 'package:majestic_travel_solution/pages/main_navigaion/app/view/main_navigation.dart';
-import 'package:majestic_travel_solution/pages/need_help_page/app/view/need_help_screen.dart';
-import 'package:majestic_travel_solution/pages/need_help_page/app/view/widgets/health_score_form.dart';
-import 'package:majestic_travel_solution/pages/need_help_page/app/view/widgets/score_list.dart';
 import 'package:majestic_travel_solution/pages/onboarding_page/app/views/onboarding_screen.dart';
+import 'package:majestic_travel_solution/pages/saved_page/app/view/saved_restaurants.dart';
 import 'package:majestic_travel_solution/pages/signup_page/app/views/signup_screen.dart';
 import 'package:majestic_travel_solution/pages/onboarding_page/app/views/splash_screen.dart';
 import 'package:majestic_travel_solution/pages/test_health_condition_page/app/views/popular_health_package.dart';
@@ -33,9 +34,9 @@ final GoRouter router = GoRouter(
     ),
 
     GoRoute(
-      path: '/help',
-      name: "help",
-      builder: (context, state) => const NeedHelpScreen(),
+      path: '/saved_restaurants',
+      name: "saved_restaurants",
+      builder: (context, state) => const SavedRestaurants(),
     ),
     GoRoute(
       path: '/booking_details',
@@ -70,6 +71,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/login',
       builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/restaurants_details',
+      builder: (context, state) => const RestaurantsDetailsPage(),
     ),
     GoRoute(
       path: '/signup',
@@ -111,12 +116,12 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const ViewReport(),
     ),
     GoRoute(
-      path: '/health_score_form',
-      builder: (context, state) => const HealthScoreForm(),
+      path: '/destination_details',
+      builder: (context, state) => const DestinationDetailsScreen(),
     ),
     GoRoute(
-      path: '/score_list',
-      builder: (context, state) => const ScoreListPage(),
+      path: '/restaurants',
+      builder: (context, state) => const RestaurantsPage(),
     ),
     GoRoute(
       path: '/add_update_address',

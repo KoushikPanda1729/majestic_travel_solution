@@ -35,14 +35,14 @@ class LoginScreen extends StatelessWidget {
                     height: safeHeight * 0.35,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.teal.withOpacity(0.7),
+                      color: Colors.grey.withOpacity(0.2),
                     ),
                     child: Stack(
                       children: [
                         // Image with appropriate fit
                         Positioned.fill(
                           child: Image.asset(
-                            AppImages.loginScreenImage,
+                            AppImages.silong,
                             fit: BoxFit.cover, // Changed from cover to contain
                             alignment: Alignment.center,
                           ),
@@ -50,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                         // Teal overlay
                         Positioned.fill(
                           child: Container(
-                            color: Colors.teal.withOpacity(0.5),
+                            color: Colors.grey.withOpacity(0.1),
                           ),
                         ),
                       ],
@@ -105,7 +105,7 @@ class LoginScreen extends StatelessWidget {
               Text(
                 'Login Or Sign Up',
                 style: textTheme.titleLarge?.copyWith(
-                  color: Colors.teal,
+                  color: AppColors.black,
                   fontSize: isTablet ? 15 : 15,
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Mulish',
@@ -123,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   context.go("/");
                 },
-                isCircle: true,
+                backgroundColor: AppColors.black,
               ),
 
               // Or sign up with divider
@@ -155,14 +155,14 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   context.push("/signup");
                 },
-                isCircle: true,
+                backgroundColor: Colors.black,
               ),
             ],
           ),
         ),
 
         // Spacer to push Terms of Service to the bottom
-        const Spacer(),
+        const SizedBox(height: 20),
 
         // Terms of service text
         Padding(
@@ -178,7 +178,7 @@ class LoginScreen extends StatelessWidget {
                 TextSpan(
                   text: 'Terms of Services',
                   style: textTheme.bodySmall?.copyWith(
-                    color: AppColors.teal, // Red color for Terms of Services
+                    color: AppColors.black, // Red color for Terms of Services
                     fontSize: isTablet ? 14 : 13,
                     fontWeight: FontWeight.bold,
                   ),
@@ -186,14 +186,14 @@ class LoginScreen extends StatelessWidget {
                 TextSpan(
                   text: ' & ',
                   style: textTheme.bodySmall?.copyWith(
-                    color: Colors.grey.shade600,
+                    color: AppColors.black,
                     fontSize: isTablet ? 14 : 13,
                   ),
                 ),
                 TextSpan(
                   text: 'Privacy Policy',
                   style: textTheme.bodySmall?.copyWith(
-                    color: AppColors.teal, // Red color for Privacy Policy
+                    color: AppColors.black, // Red color for Privacy Policy
                     fontSize: isTablet ? 14 : 12,
                     fontWeight: FontWeight.bold,
                   ),

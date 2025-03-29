@@ -88,7 +88,7 @@ class TextfieldDropdown<T> extends StatelessWidget {
                                                 height: 1.8,
                                                 fontWeight: FontWeight.w500,
                                                 color: isSelected
-                                                    ? AppColors.teal
+                                                    ? Colors.blue
                                                     : Colors.black,
                                               ),
                                             ),
@@ -98,7 +98,7 @@ class TextfieldDropdown<T> extends StatelessWidget {
                                         ? SvgPicture.asset(
                                             AppIcons.check,
                                             colorFilter: const ColorFilter.mode(
-                                              AppColors.teal,
+                                              Colors.blue,
                                               BlendMode.srcIn,
                                             ),
                                             width: 20,
@@ -221,6 +221,10 @@ class TextfieldDropdown<T> extends StatelessWidget {
                   AppIcons.angleSmallDown,
                   height: 18.0,
                   width: 18.0,
+                  colorFilter: const ColorFilter.mode(
+                    AppColors.black,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),

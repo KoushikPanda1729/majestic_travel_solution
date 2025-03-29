@@ -11,7 +11,7 @@ class SolidButtonWidget extends BaseButtonWidget {
     String? iconPath,
     bool isLeadingIcon = true,
     bool isEnabled = true,
-    this.backgroundColor = AppColors.teal,
+    this.backgroundColor = AppColors.black,
     required super.onPressed,
     super.isLoading = false,
     bool isCircle = false,
@@ -34,6 +34,14 @@ class SolidButtonWidget extends BaseButtonWidget {
       child: Container(
         height: 45.0,
         decoration: BoxDecoration(
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 1,
+              spreadRadius: 1,
+              offset: Offset(0, 1),
+            ),
+          ],
           color: buttonEntity.isEnabled
               ? backgroundColor
               : backgroundColor?.withOpacity(0.5),

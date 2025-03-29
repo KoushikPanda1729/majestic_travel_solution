@@ -39,7 +39,6 @@ class MemberTile extends StatelessWidget {
               imagePath: AppImages.profilePicture,
               onTap: () {},
               size: 40,
-              isEditingIcon: false,
             ),
             const SizedBox(width: 10),
             Expanded(

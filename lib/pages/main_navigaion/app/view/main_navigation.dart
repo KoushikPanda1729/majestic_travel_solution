@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:majestic_travel_solution/commons/components/navigation_bar/app/view/bottom_navigation_bar.dart';
 import 'package:majestic_travel_solution/pages/account_page/app/view/account_screen.dart';
-import 'package:majestic_travel_solution/pages/call_page/app/view/call_screen.dart';
+import 'package:majestic_travel_solution/pages/notification_page/app/view/notification_screen.dart';
 import 'package:majestic_travel_solution/pages/home_page/app/view/home_screen.dart';
 import 'package:majestic_travel_solution/pages/main_navigaion/app/provider/main_navigation_provider.dart';
 import 'package:majestic_travel_solution/pages/saved_page/app/view/saved_restaurants.dart';
@@ -38,7 +38,7 @@ class MainNavigationScreen extends ConsumerWidget {
                 children: const [
                   HomeScreen(),
                   SavedRestaurants(),
-                  CallScreen(),
+                  NotificationScreen(),
                   AccountScreen(),
                 ],
               ),

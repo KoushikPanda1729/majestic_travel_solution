@@ -19,19 +19,26 @@ class AccountScreen extends StatelessWidget {
         "onTap": () => context.push("/bookings"),
       },
       {
-        "title": "Reports",
-        "subtitle": "View Previous Reports",
-        "onTap": () => context.push("/reports"),
-      },
-      {
         "title": "Track",
         "subtitle": "Check Your Report Status",
         "onTap": () => context.push("/track"),
       },
       {
-        "title": "Family",
-        "subtitle": "Check Members",
-        "onTap": () => context.push("/family"),
+        "title": "Settings",
+        "subtitle": "Manage Your Preferences",
+        "onTap": () => context.push("/settings"),
+      },
+      {
+        "title": "Help",
+        "subtitle": "Get Support and FAQs",
+        "onTap": () => context.push("/help"),
+      },
+      {
+        "title": "Logout",
+        "subtitle": "Sign Out from Your Account",
+        "onTap": () {
+          // Implement logout functionality
+        },
       },
     ];
 
@@ -82,22 +89,6 @@ class AccountScreen extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 16),
-
-                // Switch Profile Button
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.teal,
-                    side: const BorderSide(color: Colors.teal),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    minimumSize: const Size(120, 36),
-                  ),
-                  child: const Text('Switch Profile'),
-                ),
-
                 const SizedBox(height: 24),
 
                 // Dynamically generate menu items with functions
@@ -109,7 +100,7 @@ class AccountScreen extends StatelessWidget {
                           child: BorderedMenuListItem(
                             title: item["title"]!,
                             subtitle: item["subtitle"]!,
-                            iconColor: Colors.teal,
+                            iconColor: Colors.black,
                             onTap: item["onTap"],
                           ),
                         ),
@@ -144,7 +135,7 @@ class BorderedMenuListItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: AppColors.teal.withOpacity(0.4),
+          color: AppColors.black.withOpacity(0.4),
           width: 1,
         ),
         borderRadius: BorderRadius.circular(8),
@@ -169,7 +160,7 @@ class BorderedMenuListItem extends StatelessWidget {
         trailing: SvgPicture.asset(
           AppIcons.angleRight,
           colorFilter: const ColorFilter.mode(
-            AppColors.teal,
+            AppColors.black,
             BlendMode.srcIn,
           ),
         ),

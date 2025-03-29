@@ -6,13 +6,13 @@ import 'package:majestic_travel_solution/pages/all_restaurants_page/app/view/res
 import 'package:majestic_travel_solution/pages/book_test_page/app/views/book_radiology.dart';
 import 'package:majestic_travel_solution/pages/book_test_page/app/views/book_test.dart';
 import 'package:majestic_travel_solution/pages/booking_details_page/app/view/booking_details_screen.dart';
-import 'package:majestic_travel_solution/pages/call_page/app/view/call_screen.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/checkout_page.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/payments_success_screen.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/add_update_address.dart';
 import 'package:majestic_travel_solution/pages/destination_details/app/view/destination_details.dart';
 import 'package:majestic_travel_solution/pages/login_page/app/views/login_screen.dart';
 import 'package:majestic_travel_solution/pages/main_navigaion/app/view/main_navigation.dart';
+import 'package:majestic_travel_solution/pages/notification_page/app/view/notification_screen.dart';
 import 'package:majestic_travel_solution/pages/onboarding_page/app/views/onboarding_screen.dart';
 import 'package:majestic_travel_solution/pages/saved_page/app/view/saved_restaurants.dart';
 import 'package:majestic_travel_solution/pages/signup_page/app/views/signup_screen.dart';
@@ -44,9 +44,9 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const BookingDetailsScreen(),
     ),
     GoRoute(
-      path: '/call',
-      name: "call",
-      builder: (context, state) => const CallScreen(),
+      path: '/notification',
+      name: "notification",
+      builder: (context, state) => const NotificationScreen(),
     ),
     GoRoute(
       path: '/track',

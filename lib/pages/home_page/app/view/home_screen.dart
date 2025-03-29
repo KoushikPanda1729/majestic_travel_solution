@@ -23,7 +23,13 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const NavBar(),
+              NavBar(
+                trailingIcon: ProfileAvatar(
+                  imagePath: AppImages.profilePicture,
+                  onTap: () {},
+                  size: 40,
+                ),
+              ),
               const SizedBox(height: 5),
               SearchBarWidget(onChanged: (_) {}),
               const SizedBox(height: 10),

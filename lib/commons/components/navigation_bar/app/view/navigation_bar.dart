@@ -24,7 +24,7 @@ class NavBar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hello, Asha",
+                      "Hello, Francesco ",
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -33,7 +33,7 @@ class NavBar extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      "Agra, Delhi",
+                      "Victoria, Seychelles",
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey,

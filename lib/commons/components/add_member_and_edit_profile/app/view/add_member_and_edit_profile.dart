@@ -228,7 +228,6 @@ class AddMemberAndEditProfile extends StatelessWidget {
             child: SolidButtonWidget(
               label: isEditMode ? "Update" : "Add",
               onPressed: () {},
-              isCircle: true,
             ),
           ),
           const SizedBox(height: 22),

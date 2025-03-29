@@ -22,7 +22,7 @@ class OnboardingScreenOne extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             const Text(
-              'Add & Manage Cards',
+              'Explore New Destinations',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class OnboardingScreenOne extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Manage your all earnings, expenses & every penny anywhere, anytime',
+              'Discover breathtaking places and plan your perfect trip with ease.',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black54,

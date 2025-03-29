@@ -9,16 +9,12 @@ class AppIcons {
   static const String calendarDay = 'assets/icons/calendar_day.svg';
   static const String callButton = 'assets/icons/call_button.svg';
   static const String check = 'assets/icons/check.svg';
-  static const String childHead = 'assets/icons/child_head.svg';
   static const String clock = 'assets/icons/clock.svg';
   static const String coupon = 'assets/icons/coupon.svg';
   static const String creditCard = 'assets/icons/credit_card.svg';
   static const String crossSmall = 'assets/icons/cross_small.svg';
-  static const String dna = 'assets/icons/dna.svg';
   static const String googlePay = 'assets/icons/google_pay.svg';
-  static const String heartBeat = 'assets/icons/heart_beat.svg';
   static const String homeButton = 'assets/icons/home_button.svg';
-  static const String medicalCheckup = 'assets/icons/medical_checkup.svg';
   static const String needHelpButton = 'assets/icons/need_help_button.svg';
   static const String oldPeople = 'assets/icons/old_people.svg';
   static const String paytm = 'assets/icons/paytm.svg';

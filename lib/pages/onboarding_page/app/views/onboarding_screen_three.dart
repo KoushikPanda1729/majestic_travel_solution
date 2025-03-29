@@ -22,7 +22,7 @@ class OnboardingScreenThree extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             const Text(
-              'Pay Bills & Payments',
+              'Exclusive Travel Deals',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class OnboardingScreenThree extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Manage your all earnings, expenses & every penny anywhere, anytime',
+              'Exclusive Travel Deals',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black54,

@@ -22,7 +22,7 @@ class OnboardingScreenTwo extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             const Text(
-              'Transfer & Receive Money',
+              'Seamless Travel Booking',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class OnboardingScreenTwo extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Manage your all earnings, expenses & every penny anywhere, anytime',
+              'Book  hotels, and experiences all in one place.',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black54,

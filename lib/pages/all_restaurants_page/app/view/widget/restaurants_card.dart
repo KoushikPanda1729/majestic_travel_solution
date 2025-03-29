@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:majestic_travel_solution/commons/components/buttons/app/floating_button__widget.dart';
-import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
 
 class RestaurantCard extends StatelessWidget {
@@ -91,7 +90,7 @@ class RestaurantCard extends StatelessWidget {
                 right: 8,
                 top: 8,
                 child: FloatingButton(
-                  onPressed: onFavoritePressed ?? () {},
+                  onPressed: onFavoritePressed,
                   iconPath: isFavorite ? AppIcons.heartFill : AppIcons.heart3,
                   backgroundColor: Colors.white.withOpacity(0.3),
                   iconColor: isFavorite ? Colors.red : Colors.white,

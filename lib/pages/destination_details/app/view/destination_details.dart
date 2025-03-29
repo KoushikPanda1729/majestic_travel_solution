@@ -8,7 +8,6 @@ import 'package:majestic_travel_solution/commons/components/profile_avatar/app/v
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
 import 'package:majestic_travel_solution/commons/constants/app_images.dart';
-import 'package:majestic_travel_solution/pages/home_page/app/view/home_screen.dart';
 import 'package:majestic_travel_solution/pages/home_page/app/view/widgets/featured_card.dart';
 
 class DestinationDetailsScreen extends StatelessWidget {

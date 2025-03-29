@@ -82,7 +82,7 @@ class RestaurantsDetailsPage extends StatelessWidget {
 
 // Restaurant Details Container with Tabs
 class RestaurantDetailsContainer extends StatefulWidget {
-  const RestaurantDetailsContainer({Key? key}) : super(key: key);
+  const RestaurantDetailsContainer({super.key});
 
   @override
   State<RestaurantDetailsContainer> createState() =>

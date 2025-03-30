@@ -7,6 +7,7 @@ import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/ch
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/payments_success_screen.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/add_update_address.dart';
 import 'package:majestic_travel_solution/pages/destination_details/app/view/destination_details.dart';
+import 'package:majestic_travel_solution/pages/inprogress.dart';
 import 'package:majestic_travel_solution/pages/login_page/app/views/login_screen.dart';
 import 'package:majestic_travel_solution/pages/main_navigaion/app/view/main_navigation.dart';
 import 'package:majestic_travel_solution/pages/notification_page/app/view/notification_screen.dart';
@@ -42,6 +43,11 @@ final GoRouter router = GoRouter(
       path: '/notification',
       name: "notification",
       builder: (context, state) => const NotificationScreen(),
+    ),
+    GoRoute(
+      path: '/in_progress',
+      name: "in_progress",
+      builder: (context, state) => const WorkInProgressScreen(),
     ),
     GoRoute(
       path: '/account',

@@ -17,30 +17,53 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
   // Example data for restaurants
   final List<Map<String, dynamic>> restaurants = [
     {
-      'imageUrl': AppImages.silong,
-      'name': 'City Hut Family Dhaba',
-      'location': 'Shillong',
-      'description': 'Casual dhaba with palm frond covered roof...',
-      'rating': 0.0,
-      'showRating': false,
+      'imageUrl': AppImages.restaurant1,
+      'name': 'The Spice Garden',
+      'location': 'Mumbai',
+      'description':
+          'A vibrant restaurant known for its rich Indian spices and flavors.',
+      'rating': 4.5,
+      'showRating': true,
       'isFavorite': false,
     },
     {
-      'imageUrl': AppImages.silong,
-      'name': 'City Hut Family Dhaba',
-      'location': 'Shillong',
-      'description': 'Casual dhaba with palm frond covered roof...',
+      'imageUrl': AppImages.restaurant2,
+      'name': 'Seaside Bites',
+      'location': 'Goa',
+      'description':
+          'A beachside eatery offering fresh seafood and stunning ocean views.',
       'rating': 4.9,
       'showRating': true,
       'isFavorite': true,
     },
     {
-      'imageUrl': AppImages.silong,
-      'name': 'City Hut Family Dhaba',
-      'location': 'Shillong',
-      'description': 'Casual dhaba with palm frond covered roof...',
-      'rating': 0.0,
-      'showRating': false,
+      'imageUrl': AppImages.restaurant3,
+      'name': 'Mountain Treats',
+      'location': 'Manali',
+      'description':
+          'A cozy spot in the hills serving delicious local Himachali cuisine.',
+      'rating': 4.2,
+      'showRating': true,
+      'isFavorite': true,
+    },
+    {
+      'imageUrl': AppImages.restaurant4,
+      'name': 'Heritage Haveli',
+      'location': 'Jaipur',
+      'description':
+          'A traditional Rajasthani restaurant with royal decor and authentic flavors.',
+      'rating': 4.7,
+      'showRating': true,
+      'isFavorite': true,
+    },
+    {
+      'imageUrl': AppImages.restaurant5,
+      'name': 'Urban Bites',
+      'location': 'Bangalore',
+      'description':
+          'A modern eatery offering a mix of continental and Indian fusion dishes.',
+      'rating': 4.3,
+      'showRating': true,
       'isFavorite': true,
     },
   ];
@@ -73,7 +96,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                       boxShadow: false,
                     ),
                     const Text(
-                      "Restaurants in siliong",
+                      "Restaurants ",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,

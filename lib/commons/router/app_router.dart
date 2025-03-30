@@ -11,6 +11,10 @@ import 'package:majestic_travel_solution/pages/login_page/app/views/login_screen
 import 'package:majestic_travel_solution/pages/main_navigaion/app/view/main_navigation.dart';
 import 'package:majestic_travel_solution/pages/notification_page/app/view/notification_screen.dart';
 import 'package:majestic_travel_solution/pages/onboarding_page/app/views/onboarding_screen.dart';
+import 'package:majestic_travel_solution/pages/place_details_page/app/view/place_details.dart';
+import 'package:majestic_travel_solution/pages/place_details_page/app/view/widgets/booking_request.dart';
+import 'package:majestic_travel_solution/pages/place_details_page/app/view/widgets/hotel_details.dart';
+import 'package:majestic_travel_solution/pages/place_details_page/app/view/widgets/hotel_map_hotel_list.dart';
 import 'package:majestic_travel_solution/pages/saved_page/app/view/saved_restaurants.dart';
 import 'package:majestic_travel_solution/pages/signup_page/app/views/signup_screen.dart';
 import 'package:majestic_travel_solution/pages/onboarding_page/app/views/splash_screen.dart';
@@ -59,6 +63,18 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const RestaurantsDetailsPage(),
     ),
     GoRoute(
+      path: '/booking_request',
+      builder: (context, state) => const BookingRequestScreen(),
+    ),
+    GoRoute(
+      path: '/hotel_details',
+      builder: (context, state) => const HotelDetails(),
+    ),
+    GoRoute(
+      path: '/place_details',
+      builder: (context, state) => const PlaceDetails(),
+    ),
+    GoRoute(
       path: '/signup',
       builder: (context, state) => SignupScreen(),
     ),
@@ -79,6 +95,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/restaurants',
       builder: (context, state) => const RestaurantsPage(),
+    ),
+    GoRoute(
+      path: '/hotel_map_hotel_list',
+      builder: (context, state) => const HotelMapHotelList(),
     ),
     GoRoute(
       path: '/add_update_address',

@@ -69,7 +69,7 @@ class PaymentSuccessfulScreen extends StatelessWidget {
                     context.go("/");
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal,
+                    backgroundColor: Colors.black,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12),
                     shape: RoundedRectangleBorder(

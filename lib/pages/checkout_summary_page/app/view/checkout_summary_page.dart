@@ -7,7 +7,7 @@ import 'package:majestic_travel_solution/commons/components/open_custom_buttomsh
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/provider/checkout_summary_provider.dart';
-import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/apply_coupons_widget.dart';
+import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/select_payments_methods.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/coupon_and_payment_summary.dart';
 import 'package:majestic_travel_solution/pages/checkout_summary_page/app/view/widget/test_summary_card.dart';
 
@@ -57,7 +57,7 @@ class CartSummaryStep extends ConsumerWidget {
               onViewCoupons: () {
                 openCustomBottomSheet(
                   context: context,
-                  child: const ApplyCouponsWidget(),
+                  child: const SelectPaymentMethodWidget(),
                 );
               },
               subTotal: checkoutData['subTotal'],

@@ -6,13 +6,13 @@ class ProfileAvatar extends StatelessWidget {
   final double size;
   final VoidCallback onTap;
   final bool isEditingIcon;
-  final bool isUploadMode; // New parameter
+  final bool isUploadMode;
   final Color? borderColor;
 
   const ProfileAvatar({
     super.key,
     required this.imagePath,
-    this.size = 64, // Default size
+    this.size = 64,
     required this.onTap,
     this.isEditingIcon = false,
     this.isUploadMode = false,
@@ -55,7 +55,7 @@ class ProfileAvatar extends StatelessWidget {
                   child: Text(
                     label,
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
+                    maxLines: 1,
                   ),
                 )
             ],
@@ -73,9 +73,7 @@ class ProfileAvatar extends StatelessWidget {
                 border: Border.all(color: Colors.white, width: 2),
               ),
               child: Icon(
-                isUploadMode
-                    ? Icons.camera_alt
-                    : Icons.edit, // Show camera icon if isUploadMode is true
+                isUploadMode ? Icons.camera_alt : Icons.edit,
                 size: 16,
                 color: Colors.white,
               ),

@@ -63,6 +63,7 @@ class AddMemberAndEditProfile extends StatelessWidget {
                         ProfileAvatar(
                           imagePath: AppImages.profilePicture,
                           onTap: () {},
+                          isUploadMode: true,
                         ),
                         const SizedBox(width: 14),
                         Expanded(

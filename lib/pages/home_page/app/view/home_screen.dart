@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(height: 10),
                       _buildFeaturedGuides(),
                       const SizedBox(height: 10),
-                      _buildPopularDestinations(),
+                      _buildPopularDestinations(context),
                       const SizedBox(height: 100),
                     ],
                   ),
@@ -140,7 +140,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              child: GestureDetector(
+              child: InkWell(
                 onTap: () => context.push("/destination_details"),
                 child: Row(
                   // mainAxisSize: MainAxisSize.min,
@@ -204,6 +204,14 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildFeaturedGuides() {
+    const List<Map<String, String>> featureGuide = [
+      {'name': 'Sydney', 'image': AppImages.silong},
+      {'name': 'Paris', 'image': AppImages.destination1},
+      {'name': 'Dubai', 'image': AppImages.destination2},
+      {'name': ' New York', 'image': AppImages.destination3},
+      {'name': 'Rome', 'image': AppImages.destination4},
+      {'name': 'Rome', 'image': AppImages.destination5},
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -213,24 +221,23 @@ class HomeScreen extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: List.generate(
-              6,
-              (index) => Padding(
+            children: featureGuide.map((guide) {
+              return Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: FeaturedCard(
                   width: 250,
                   height: 300,
-                  child: _buildGuideCard(),
+                  child: _buildGuideCard(guide["image"] ?? ''),
                 ),
-              ),
-            ),
+              );
+            }).toList(),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildGuideCard() {
+  Widget _buildGuideCard(String imageUrl) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
@@ -242,8 +249,8 @@ class HomeScreen extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
-                image: AssetImage(AppImages.silong), // Replace with your image
+              image: DecorationImage(
+                image: AssetImage(imageUrl), // Replace with your image
                 fit: BoxFit.cover,
               ),
             ),
@@ -329,7 +336,14 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPopularDestinations() {
+  Widget _buildPopularDestinations(BuildContext context) {
+    const List<Map<String, String>> popularDestinations = [
+      {'name': 'Sydney', 'image': AppImages.location1},
+      {'name': 'Paris', 'image': AppImages.location2},
+      {'name': 'Dubai', 'image': AppImages.location3},
+      {'name': ' New York', 'image': AppImages.location4},
+      {'name': 'Rome', 'image': AppImages.location5},
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -357,19 +371,19 @@ class HomeScreen extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(
-              10,
-              (index) => Padding(
+            children: popularDestinations.map((destination) {
+              return Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: ProfileAvatar(
-                  imagePath: AppImages.silong,
-                  onTap: () {},
+                  imagePath: destination['image']!,
+                  onTap: () {
+                    context.push("/destination_details");
+                  },
                   borderColor: Colors.blue.shade100,
-                  label: "Siachle",
+                  label: destination['name']!,
                 ),
-              ),
-            ),
+              );
+            }).toList(),
           ),
         ),
       ],

@@ -15,6 +15,14 @@ class DestinationDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const List<Map<String, String>> TopPlaces = [
+      {'name': 'Sydney', 'image': AppImages.silong},
+      {'name': 'Paris', 'image': AppImages.destination1},
+      {'name': 'Dubai', 'image': AppImages.destination2},
+      {'name': ' New York', 'image': AppImages.destination3},
+      {'name': 'Rome', 'image': AppImages.destination4},
+      {'name': 'Rome', 'image': AppImages.destination5},
+    ];
     return Scaffold(
       backgroundColor: const Color(0xFFF7F6F0),
       body: Column(
@@ -158,13 +166,13 @@ class DestinationDetailsScreen extends StatelessWidget {
                             context.push("/restaurants");
                           }),
                           _buildCategoryItem(AppIcons.plate, 'Cheap Eats', () {
-                            context.push("/");
+                            context.push("/restaurants");
                           }),
                           _buildCategoryItem(AppIcons.cafe, 'Cafes', () {
-                            context.push("/");
+                            context.push("/restaurants");
                           }),
                           _buildCategoryItem(AppIcons.fair, 'Attractions', () {
-                            context.push("/");
+                            context.push("/restaurants");
                           }),
                         ],
                       ),
@@ -195,17 +203,17 @@ class DestinationDetailsScreen extends StatelessWidget {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        children: List.generate(
-                          6,
-                          (index) => Padding(
+                        children: TopPlaces.map(
+                          (place) => Padding(
                             padding: const EdgeInsets.only(right: 10),
                             child: FeaturedCard(
                               width: 200,
                               height: 250,
-                              child: buildTopPlaceCard(),
+                              child: buildTopPlaceCard(place["image"] ?? '',
+                                  () => context.push("/place_details")),
                             ),
                           ),
-                        ),
+                        ).toList(),
                       ),
                     ),
                     const SizedBox(
@@ -394,96 +402,99 @@ class DestinationDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget buildTopPlaceCard() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Stack(
-        children: [
-          // Background Image
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
-                image: AssetImage(AppImages.silong), // Replace with your image
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-
-          // Floating Details
-          Positioned(
-            bottom: 10,
-            left: 10,
-            right: 10,
-            child: Container(
-              padding: const EdgeInsets.all(8),
+  Widget buildTopPlaceCard(String imageUrl, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Stack(
+          children: [
+            // Background Image
+            Container(
+              width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 4,
-                    spreadRadius: 1,
-                  )
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Cox's Bazar Beach",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      SvgPicture.asset(
-                        AppIcons.location,
-                        height: 12,
-                        width: 12,
-                        colorFilter: const ColorFilter.mode(
-                          Colors.grey,
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      const Text(
-                        "Bangladesh",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(
-                        Icons.star,
-                        size: 14,
-                        color: Colors.amber,
-                      ),
-                      const SizedBox(width: 2),
-                      const Text(
-                        "4.9",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                  image: AssetImage(imageUrl), // Replace with your image
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-        ],
+
+            // Floating Details
+            Positioned(
+              bottom: 10,
+              left: 10,
+              right: 10,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 4,
+                      spreadRadius: 1,
+                    )
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Cox's Bazar Beach",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          AppIcons.location,
+                          height: 12,
+                          width: 12,
+                          colorFilter: const ColorFilter.mode(
+                            Colors.grey,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        const Text(
+                          "Bangladesh",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const Spacer(),
+                        const Icon(
+                          Icons.star,
+                          size: 14,
+                          color: Colors.amber,
+                        ),
+                        const SizedBox(width: 2),
+                        const Text(
+                          "4.9",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

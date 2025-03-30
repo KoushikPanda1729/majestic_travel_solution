@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:majestic_travel_solution/commons/components/buttons/app/solid_button_widget.dart';
+import 'package:majestic_travel_solution/commons/components/open_custom_buttomsheet/open_custom_buttomsheet.dart';
 import 'package:majestic_travel_solution/commons/components/profile_avatar/app/view/profile_avatar.dart';
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
@@ -11,7 +13,6 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Define menu items with title, subtitle, and onTap function
     final List<Map<String, dynamic>> menuItems = [
       {
         "title": "Bookings",
@@ -37,7 +38,10 @@ class AccountScreen extends StatelessWidget {
         "title": "Logout",
         "subtitle": "Sign Out from Your Account",
         "onTap": () {
-          // Implement logout functionality
+          openCustomBottomSheet(
+            context: context,
+            child: const LogOutWidget(),
+          );
         },
       },
     ];
@@ -51,7 +55,6 @@ class AccountScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header with name and email
                 Row(
                   children: [
                     const Expanded(
@@ -59,7 +62,7 @@ class AccountScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Asha Yadav',
+                            'Francesco',
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w600,
@@ -68,7 +71,7 @@ class AccountScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            'ashayadav@gmail.com',
+                            'Francesco@gmail.com',
                             style: TextStyle(
                               fontSize: 12,
                               color: Colors.black54,
@@ -88,10 +91,7 @@ class AccountScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 24),
-
-                // Dynamically generate menu items with functions
                 Column(
                   children: menuItems
                       .map(
@@ -165,6 +165,48 @@ class BorderedMenuListItem extends StatelessWidget {
           ),
         ),
         onTap: onTap,
+      ),
+    );
+  }
+}
+
+class LogOutWidget extends StatelessWidget {
+  const LogOutWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Text(
+            "Are you sure you want to logout?",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: SolidButtonWidget(
+                  label: "Cancel",
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Expanded(
+                child: SolidButtonWidget(
+                  label: "Logout",
+                  onPressed: () => context.go('/login'),
+                  backgroundColor: AppColors.orange,
+                ),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }

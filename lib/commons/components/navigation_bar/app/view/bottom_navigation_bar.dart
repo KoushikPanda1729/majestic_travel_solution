@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:majestic_travel_solution/commons/components/buttons/app/floating_button__widget.dart';
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
-import 'package:majestic_travel_solution/pages/place_details_page/app/view/place_details.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
   final int activeIndex;

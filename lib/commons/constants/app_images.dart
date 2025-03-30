@@ -23,4 +23,5 @@ class AppImages {
   static const String restaurant3 = 'assets/images/restaurant_3.jpeg';
   static const String restaurant4 = 'assets/images/restaurant_4.jpeg';
   static const String restaurant5 = 'assets/images/restaurant_5.jpeg';
+  static const String map = 'assets/images/map.png';
 }

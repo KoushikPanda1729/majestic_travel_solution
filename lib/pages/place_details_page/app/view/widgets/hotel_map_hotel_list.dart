@@ -6,6 +6,7 @@ import 'package:majestic_travel_solution/commons/components/buttons/app/solid_bu
 import 'package:majestic_travel_solution/commons/components/search_bar/app/view/search_bar_widget.dart';
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
+import 'package:majestic_travel_solution/commons/constants/app_images.dart';
 
 class HotelMapHotelList extends StatefulWidget {
   const HotelMapHotelList({super.key});
@@ -32,29 +33,25 @@ class _HotelMapHotelListState extends State<HotelMapHotelList> {
       'name': 'Star Pacific Sylhet',
       'price': 'BDT 8,542',
       'rating': 4.0,
-      'image':
-          'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      'image': AppImages.destination1,
     },
     {
       'name': 'Rose View Hotel',
       'price': 'BDT 12,350',
       'rating': 4.5,
-      'image':
-          'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      'image': AppImages.destination2,
     },
     {
       'name': 'Hotel Supreme',
       'price': 'BDT 7,800',
       'rating': 3.8,
-      'image':
-          'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      'image': AppImages.destination3,
     },
     {
       'name': 'Grand Palace Hotel',
       'price': 'BDT 9,250',
       'rating': 4.2,
-      'image':
-          'https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      'image': AppImages.destination4,
     },
   ];
 
@@ -188,8 +185,7 @@ class _HotelMapHotelListState extends State<HotelMapHotelList> {
                               bottomLeft: Radius.circular(12),
                             ),
                             image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+                              image: AssetImage(AppImages.destination4),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -390,7 +386,7 @@ class _HotelMapHotelListState extends State<HotelMapHotelList> {
                               bottomLeft: Radius.circular(12),
                             ),
                             image: DecorationImage(
-                              image: NetworkImage(hotel['image']),
+                              image: AssetImage(hotel['image']),
                               fit: BoxFit.cover,
                             ),
                           ),

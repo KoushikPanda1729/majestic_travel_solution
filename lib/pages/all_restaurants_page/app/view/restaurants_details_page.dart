@@ -115,7 +115,7 @@ class _RestaurantDetailsContainerState
               Icon(Icons.location_on, size: 16, color: Colors.grey[600]),
               const SizedBox(width: 4),
               Text(
-                "Shillong, India",
+                "Victoria, Seychelles",
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[600],
@@ -154,7 +154,7 @@ class _RestaurantDetailsContainerState
         children: [
           // Overview Content
           const Text(
-            "Casual dhaba with a palm frond-covered roof & a traditional North Indian menu.",
+            "Casual dhaba with a palm frond-covered roof & a traditional North Seychellesn menu.",
             style: TextStyle(fontSize: 14, color: Colors.grey),
           ),
           const SizedBox(height: 16),

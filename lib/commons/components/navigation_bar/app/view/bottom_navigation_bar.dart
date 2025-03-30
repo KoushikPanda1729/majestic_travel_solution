@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:majestic_travel_solution/commons/components/buttons/app/floating_button__widget.dart';
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
+import 'package:majestic_travel_solution/pages/place_details_page/app/view/place_details.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
   final int activeIndex;
@@ -40,7 +42,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
           bottom: MediaQuery.of(context).padding.bottom + 10,
           child: FloatingButton(
             onPressed: () {
-              // context.push("/destination_details");
+              GoRouter.of(context).push("/add_trip");
             },
             iconPath: AppIcons.add,
             backgroundColor: AppColors.black,

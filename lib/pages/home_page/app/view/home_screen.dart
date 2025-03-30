@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Shillong',
+                          'Victoria',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
@@ -169,7 +169,7 @@ class HomeScreen extends StatelessWidget {
                             const SizedBox(width: 2),
                             const SizedBox(width: 2),
                             const Text(
-                              'India',
+                              'Seychelles',
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
@@ -358,7 +358,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () => context.push("/tourist_spot"),
               child: const Text(
                 'Show all',
                 style: TextStyle(

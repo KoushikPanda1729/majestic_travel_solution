@@ -96,10 +96,13 @@ class DestinationDetailsScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SolidButtonWidget(
-                          label: "Start Planning", onPressed: () {}),
+                          label: "Start Planning",
+                          onPressed: () {
+                            context.push("/add_trip");
+                          }),
                       const SizedBox(height: 4),
                       const Text(
-                        'Shillong On Your Mind?',
+                        'What On Your Mind?',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -143,13 +146,6 @@ class DestinationDetailsScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          'Show all',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.black,
-                          ),
-                        ),
                       ],
                     ),
                     // Category Icons
@@ -180,21 +176,24 @@ class DestinationDetailsScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Top Places Shillong',
+                        const Text(
+                          'Top Places Victoria',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          'Show all',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.black,
+                        GestureDetector(
+                          onTap: () => context.push("/tourist_spot"),
+                          child: const Text(
+                            'Show all',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ],
@@ -445,7 +444,7 @@ class DestinationDetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "Cox's Bazar Beach",
+                      "Anse Source d'Argent",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
@@ -467,7 +466,7 @@ class DestinationDetailsScreen extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         const Text(
-                          "Bangladesh",
+                          "Seychelles",
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey,

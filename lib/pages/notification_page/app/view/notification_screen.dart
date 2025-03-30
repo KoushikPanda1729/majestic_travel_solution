@@ -9,6 +9,57 @@ import 'package:majestic_travel_solution/commons/constants/app_icons.dart';
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
+  final List<Map<String, String>> notifications = const [
+    {
+      "title": "Booking Confirmed",
+      "description": "Your trip to Maldives has been confirmed. Get ready!"
+    },
+    {
+      "title": "New Destination Added",
+      "description": "Explore the hidden gems of Bali with our latest package."
+    },
+    {
+      "title": "Discount Alert!",
+      "description":
+          "Limited-time 20% discount on your next trip to Seychelles."
+    },
+    {
+      "title": "Flight Schedule Update",
+      "description":
+          "Your flight to Paris has been rescheduled. Check your email."
+    },
+    {
+      "title": "Travel Safety Tips",
+      "description":
+          "Learn how to stay safe while traveling in new destinations."
+    },
+    {
+      "title": "Loyalty Rewards Earned",
+      "description":
+          "You've earned 500 travel points! Redeem them on your next trip."
+    },
+    {
+      "title": "Exclusive Beach Resort Offer",
+      "description":
+          "Stay at the luxurious Bora Bora resort with a 3-night free stay."
+    },
+    {
+      "title": "New Adventure Package",
+      "description":
+          "Experience thrilling activities in the Swiss Alps this season."
+    },
+    {
+      "title": "Upcoming Trip Reminder",
+      "description":
+          "Your trip to Santorini is in 3 days. Time to pack your bags!"
+    },
+    {
+      "title": "Customer Support Assistance",
+      "description":
+          "We are here to help! Contact us for any travel-related queries."
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,46 +99,50 @@ class NotificationScreen extends StatelessWidget {
               trailingIcon: const SizedBox(),
             ),
 
-            // Header
-
             const SizedBox(height: 8),
 
             Expanded(
-              child: ListView.separated(
-                itemCount: 10, // Example notification count
-                separatorBuilder: (context, index) => const Divider(),
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: AppColors.black.withOpacity(0.1),
-                      child: SvgPicture.asset(
-                        AppIcons.bell,
-                        colorFilter: const ColorFilter.mode(
-                          AppColors.black,
-                          BlendMode.srcIn,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 60.0),
+                child: ListView.separated(
+                  itemCount: notifications.length,
+                  separatorBuilder: (context, index) =>
+                      Divider(color: Colors.grey.withOpacity(0.3)),
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: AppColors.black.withOpacity(0.1),
+                        child: SvgPicture.asset(
+                          AppIcons.bell,
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.black,
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ),
-                    ),
-                    title: Text(
-                      "New Notification ${index + 1}",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                      title: Text(
+                        notifications[index]["title"]!,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                    subtitle: Text(
-                      "This is the detail of notification ${index + 1}.",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey.shade600,
+                      subtitle: Text(
+                        notifications[index]["description"]!,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey.shade600,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
                       ),
-                    ),
-                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                    onTap: () {
-                      // Handle notification tap
-                    },
-                  );
-                },
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                      onTap: () {
+                        // Handle notification tap
+                      },
+                    );
+                  },
+                ),
               ),
             ),
           ],

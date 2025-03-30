@@ -21,7 +21,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
       'name': 'The Spice Garden',
       'location': 'Mumbai',
       'description':
-          'A vibrant restaurant known for its rich Indian spices and flavors.',
+          'A vibrant restaurant known for its rich Seychellesn spices and flavors.',
       'rating': 4.5,
       'showRating': true,
       'isFavorite': false,
@@ -61,7 +61,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
       'name': 'Urban Bites',
       'location': 'Bangalore',
       'description':
-          'A modern eatery offering a mix of continental and Indian fusion dishes.',
+          'A modern eatery offering a mix of continental and Seychellesn fusion dishes.',
       'rating': 4.3,
       'showRating': true,
       'isFavorite': true,

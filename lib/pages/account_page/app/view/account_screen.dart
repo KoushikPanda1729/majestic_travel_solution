@@ -135,7 +135,7 @@ class BorderedMenuListItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: AppColors.black.withOpacity(0.4),
+          color: Colors.grey.withOpacity(0.3),
           width: 1,
         ),
         borderRadius: BorderRadius.circular(8),

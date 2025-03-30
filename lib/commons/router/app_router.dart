@@ -15,9 +15,13 @@ import 'package:majestic_travel_solution/pages/place_details_page/app/view/place
 import 'package:majestic_travel_solution/pages/place_details_page/app/view/widgets/booking_request.dart';
 import 'package:majestic_travel_solution/pages/place_details_page/app/view/widgets/hotel_details.dart';
 import 'package:majestic_travel_solution/pages/place_details_page/app/view/widgets/hotel_map_hotel_list.dart';
+import 'package:majestic_travel_solution/pages/plan_new_trip_page/app/view/plan_new_trip.dart';
+import 'package:majestic_travel_solution/pages/plan_new_trip_page/app/view/widgets/my_trip.dart';
 import 'package:majestic_travel_solution/pages/saved_page/app/view/saved_restaurants.dart';
 import 'package:majestic_travel_solution/pages/signup_page/app/views/signup_screen.dart';
 import 'package:majestic_travel_solution/pages/onboarding_page/app/views/splash_screen.dart';
+import 'package:majestic_travel_solution/pages/tourist_spot_page/app/view/tourist_spot.dart';
+import 'package:majestic_travel_solution/pages/tourist_spot_page/app/view/widgets/tourist_spot_details.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/splash',
@@ -82,6 +86,22 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/checkout',
       builder: (context, state) => const CheckoutPage(),
+    ),
+    GoRoute(
+      path: '/tourist_spot',
+      builder: (context, state) => const TouristSpot(),
+    ),
+    GoRoute(
+      path: '/tourist_spot_details',
+      builder: (context, state) => const TouristSpotDetails(),
+    ),
+    GoRoute(
+      path: '/add_trip',
+      builder: (context, state) => const PlanTripScreen(),
+    ),
+    GoRoute(
+      path: '/my_trip',
+      builder: (context, state) => const MyTrip(),
     ),
     // Existing routes that remain the same
     GoRoute(

@@ -101,7 +101,7 @@ class _RestaurantDetailsContainerState
         children: [
           // Restaurant Name
           const Text(
-            "Cox's Bazar Beach",
+            "Anse Source d'Argent",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -114,7 +114,7 @@ class _RestaurantDetailsContainerState
               Icon(Icons.location_on, size: 16, color: Colors.grey[600]),
               const SizedBox(width: 4),
               Text(
-                "Shillong, India",
+                "Victoria, Seychelles",
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[600],

@@ -243,7 +243,7 @@ class LoginScreen extends StatelessWidget {
                     items: const [
                       '+1', // USA
                       '+44', // UK
-                      '+91', // India
+                      '+91', // Seychelles
                       '+81', // Japan
                       '+33', // France
                       '+49', // Germany

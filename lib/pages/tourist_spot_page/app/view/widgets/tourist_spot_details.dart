@@ -4,9 +4,10 @@ import 'package:majestic_travel_solution/commons/components/buttons/app/solid_bu
 import 'package:majestic_travel_solution/commons/components/profile_avatar/app/view/profile_avatar.dart';
 import 'package:majestic_travel_solution/commons/constants/app_colors.dart';
 import 'package:majestic_travel_solution/commons/constants/app_images.dart';
+import 'package:majestic_travel_solution/pages/tourist_spot_page/app/view/tourist_spot.dart';
 
-class HotelDetails extends StatelessWidget {
-  const HotelDetails({super.key});
+class TouristSpotDetails extends StatelessWidget {
+  const TouristSpotDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class HotelDetails extends StatelessWidget {
                     children: [
                       Positioned.fill(
                         child: Image.asset(
-                          AppImages.restaurant1,
+                          AppImages.destination1,
                           fit: BoxFit.cover,
                           alignment: Alignment.center,
                         ),
@@ -101,7 +102,7 @@ class _RestaurantDetailsContainerState
         children: [
           // Restaurant Name
           const Text(
-            "Star Pacific Sylhet",
+            "Victoria , Tourist Spot",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -148,83 +149,7 @@ class _RestaurantDetailsContainerState
   // Function to display tab content
   Widget _buildTabContent() {
     if (_activeTab == "Overview") {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Overview Content
-          const Text(
-            "Casual dhaba with a palm frond-covered roof & a traditional North Seychellesn menu.",
-            style: TextStyle(fontSize: 14, color: Colors.grey),
-          ),
-          const SizedBox(height: 16),
-
-          // Opening Hours
-          Row(
-            children: [
-              Container(
-                width: 24,
-                height: 24,
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  shape: BoxShape.circle,
-                ),
-                child:
-                    Icon(Icons.access_time, size: 16, color: Colors.grey[700]),
-              ),
-              const SizedBox(width: 12),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      const Text(
-                        "Closed",
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        " · Opens 10 AM",
-                        style: TextStyle(
-                          color: Colors.grey[800],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "Open by business 5 days ago",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 16),
-          Wrap(
-            spacing: 1.0, // Space between items
-            runSpacing: 1.0, // Space between rows
-            children: [
-              _buildAmenityItem(Icons.house, 'Single Family'),
-              _buildAmenityItem(Icons.landscape, 'Outdoors'),
-              _buildAmenityItem(Icons.room_service, 'Room Service'),
-              _buildAmenityItem(Icons.chair, 'Fully-furnished'),
-              _buildAmenityItem(Icons.bathtub, 'Bathtub'),
-              _buildAmenityItem(Icons.volume_off, 'Quiet surroundings'),
-            ],
-          ),
-          const SizedBox(height: 16),
-          SolidButtonWidget(
-              label: "Reserved Now",
-              onPressed: () {
-                context.push("/booking_request");
-              })
-        ],
-      );
+      return OverviewTab();
     } else if ((_activeTab == "Review")) {
       return const ReviewSection();
     } else {
@@ -232,31 +157,6 @@ class _RestaurantDetailsContainerState
         "This is Work in progress",
       );
     }
-  }
-
-  Widget _buildAmenityItem(IconData icon, String text) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade300),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: Colors.grey.shade700),
-          const SizedBox(width: 8),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.grey.shade800,
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
-      ),
-    );
   }
 
   // Function to create a tab button
@@ -410,5 +310,130 @@ class ReviewSection extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class OverviewTab extends StatefulWidget {
+  @override
+  _OverviewTabState createState() => _OverviewTabState();
+}
+
+class _OverviewTabState extends State<OverviewTab> {
+  String _activeTab = "Overview";
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildTabContent(),
+      ],
+    );
+  }
+
+  Widget _buildTabContent() {
+    if (_activeTab == "Overview") {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Description
+          const Text(
+            "Museum focusing on local indigenous people & culture, with all tools, clothing & artifacts on display. Don bosco to museum.",
+            style: TextStyle(fontSize: 14, color: Colors.grey),
+          ),
+          const SizedBox(height: 16),
+
+          // Trip Options
+          const Text(
+            "Let's Start Your Trip",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+
+          // Weather
+          const Row(
+            children: [
+              Icon(Icons.cloud, size: 20, color: Colors.grey),
+              SizedBox(width: 8),
+              Text(
+                "2°C Mostly cloudy",
+                style: TextStyle(fontSize: 14, color: Colors.grey),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+
+          // Local Time
+          const Row(
+            children: [
+              Icon(Icons.access_time, size: 20, color: Colors.grey),
+              SizedBox(width: 8),
+              Text(
+                "Local time Sunday 1:06 pm (GMT-5:00)",
+                style: TextStyle(fontSize: 14, color: Colors.grey),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+
+          // Gallery
+          const Text(
+            "Other Suggested Spot",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+
+          TouristSpotCard(
+            onTap: () => context.push("/tourist_spot_details"),
+            name: "Cherrapunji, Tourist Spot",
+            location: "Cherrapunji, Seychelles",
+            rating: 4.8,
+            openHours: "Open 5 hours",
+            timeRange: "10:00 AM to 03:00 PM",
+            images: const [
+              AppImages.destination1,
+              AppImages.destination2,
+              AppImages.destination3,
+            ],
+          ),
+          TouristSpotCard(
+            onTap: () => context.push("/tourist_spot_details"),
+            name: "Cherrapunji, Tourist Spot",
+            location: "Cherrapunji, Seychelles",
+            rating: 4.8,
+            openHours: "Open 5 hours",
+            timeRange: "10:00 AM to 03:00 PM",
+            images: const [
+              AppImages.destination1,
+              AppImages.destination2,
+              AppImages.destination3,
+            ],
+          ),
+          TouristSpotCard(
+            onTap: () => context.push("/tourist_spot_details"),
+            name: "Cherrapunji, Tourist Spot",
+            location: "Cherrapunji, Seychelles",
+            rating: 4.8,
+            openHours: "Open 5 hours",
+            timeRange: "10:00 AM to 03:00 PM",
+            images: const [
+              AppImages.destination1,
+              AppImages.destination2,
+              AppImages.destination3,
+            ],
+          ),
+        ],
+      );
+    } else if (_activeTab == "Review") {
+      return const Text("Reviews Section (Work in Progress)");
+    } else {
+      return const Text("This is Work in Progress");
+    }
   }
 }
